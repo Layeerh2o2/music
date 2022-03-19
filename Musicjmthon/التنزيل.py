@@ -65,8 +65,8 @@ async def song(client, message: Message):
         return
     c_time = time.time()
     capy = f"""
-**🏷️ إسم الأغنية :** [{thum}]({mo})
-**🎧 طلب تنزيل من :** {message.from_user.mention}
+** إسم الأغنية :** [{thum}]({mo})
+** طلب تنزيل من :** {message.from_user.mention}
 """
     file_stark = f"{ytdl_data['id']}.mp3"
     await client.send_audio(
@@ -81,7 +81,7 @@ async def song(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 يتم تحميل ** `{urlissed}`",
+            f"** يتم تحميل ** `{urlissed}`",
             file_stark,
         ),
     )
@@ -234,7 +234,7 @@ def time_to_seconds(time):
 async def vsong(client, message: Message):
     urlissed = get_text(message)
 
-    pablo = await client.send_message(message.chat.id, f"**🔎 يتم البحث عن ** `{urlissed}`")
+    pablo = await client.send_message(message.chat.id, f"** يتم البحث عن ** `{urlissed}`")
     if not urlissed:
         await pablo.edit(
             "• يرجى وضع اسم للبحث عنه اولا"
@@ -273,8 +273,8 @@ async def vsong(client, message: Message):
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
-**🏷️ اسم الفيديو :** [{thum}]({mo})
-**🎧 طلب تحميله من:** {message.from_user.mention}
+** اسم الفيديو :** [{thum}]({mo})
+** طلب تحميله من:** {message.from_user.mention}
 """
     await client.send_video(
         message.chat.id,
@@ -288,7 +288,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 يتم التحميل** `{urlissed}`",
+            f"** يتم التحميل** `{urlissed}`",
             file_stark,
         ),
     )
