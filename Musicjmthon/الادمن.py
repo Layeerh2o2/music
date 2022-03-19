@@ -20,12 +20,12 @@ async def skip(client, m: Message):
             await m.reply("**")
         else:
             await m.reply(
-                f"**⏭ تخطي التشغيل** \n**🎧 المشغل الحالي ** - [{op[0]}]({op[1]}) | `{op[2]}`",
+                f"** تخطي التشغيل** \n** المشغل الحالي ** - [{op[0]}]({op[1]}) | `{op[2]}`",
                 disable_web_page_preview=True,
             )
     else:
         skip = m.text.split(None, 1)[1]
-        OP = "**🗑️ تمت إزالة الأغاني التالية من قائمة الانتظار : **"
+        OP = "** تمت إزالة الأغاني التالية من قائمة الانتظار : **"
         if chat_id in QUEUE:
             items = [int(x) for x in skip.split(" ") if x.isdigit()]
             items.sort(reverse=True)
